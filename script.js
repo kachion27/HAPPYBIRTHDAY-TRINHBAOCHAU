@@ -296,7 +296,9 @@ Chúc bạn luôn mạnh khỏe, xinh đẹp, thành công trong mọi điều b
 
 Mãi là cô gái tuyệt vời nhất! 🌸✨
 
-- From Xteam with love 💕`;
+- From Xteam with love 💕
+
+Đã ký: Trần Kiều My - Kami`;
 
     const typeWriter = (text, element, speed = 35) => {
         let i = 0;

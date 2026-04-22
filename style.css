@@ -1179,8 +1179,16 @@ body {
 }
 
 .gift-reveal-emoji {
-    font-size: 3rem;
     margin-bottom: 16px;
+    width: 100%;
+}
+
+.gift-form-embed {
+    width: min(100%, 640px);
+    height: 420px;
+    border: 0;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.85);
 }
 
 .gift-reveal-card h3 {
@@ -1203,6 +1211,12 @@ body {
 .gift-reveal-sparkle {
     font-size: 1.5rem;
     animation: sparkle 2s infinite;
+}
+
+@media (max-width: 768px) {
+    .gift-form-embed {
+        height: 520px;
+    }
 }
 
 /* ================================
