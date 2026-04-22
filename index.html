@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Happy Birthday Trịnh Bảo Châu - Cô gái xinh gái nhất Xteam 💕">
+    <title>🎂 Happy Birthday Trịnh Bảo Châu 💕</title>
+    <link rel="shortcut icon" href="./img/1.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Quicksand:wght@300;400;500;600;700&family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Mouse Glow -->
+    <div id="mouse-glow"></div>
+
+    <!-- Floating Hearts Container -->
+    <div id="floating-hearts"></div>
+
+    <!-- Confetti Canvas -->
+    <canvas id="confetti-canvas"></canvas>
+
+    <!-- ======================== -->
+    <!-- 1. TROLL INTRO SCREEN    -->
+    <!-- ======================== -->
+    <div id="intro-screen">
+        <div id="loading-phase" class="intro-phase active">
+            <div class="loading-container glass-card">
+                <div class="loading-icon">📊</div>
+                <h2>Đang phân tích Báo cáo Tài chính Q2/2026...</h2>
+                <div class="progress-bar-wrapper">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress-fill"></div>
+                    </div>
+                    <span class="progress-text" id="progress-text">0%</span>
+                </div>
+                <p class="loading-hint">🏢 Hệ thống ERP đang xử lý dữ liệu KPI...</p>
+            </div>
+        </div>
+
+        <div id="stuck-phase" class="intro-phase">
+            <div class="stuck-container glass-card">
+                <div class="stuck-icon">📉</div>
+                <h2>CẢNH BÁO: Doanh thu sụt giảm!</h2>
+                <p>Hệ thống phát hiện KPI đang kẹt ở 99%... CEO yêu cầu xử lý gấp!</p>
+                <div class="stuck-progress">
+                    <div class="progress-bar">
+                        <div class="progress-fill stuck"></div>
+                    </div>
+                    <span class="progress-text">99%</span>
+                </div>
+                <div class="stuck-buttons">
+                    <button id="btn-exit" class="btn-troll btn-exit">Nghỉ việc ❌</button>
+                    <button id="btn-retry" class="btn-troll btn-retry">Họp khẩn cấp 🎁</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="error-phase" class="intro-phase">
+            <div class="error-container glass-card glitch-effect">
+                <div class="error-icon">💼</div>
+                <h2 class="error-title">KHỦNG HOẢNG DOANH NGHIỆP</h2>
+                <div class="error-box">
+                    <p class="error-msg">⚠️ LỖI HỆ THỐNG: Không tìm thấy nhân viên 'Trịnh Bảo Châu' trong database công ty!</p>
+                    <p class="error-msg" style="font-size: 0.95rem; margin-top: 8px;">💀 Nguyên nhân: Quá xinh → Hệ thống tưởng là CEO chứ không phải nhân viên</p>
+                    <div class="error-code">Error Code: 0xQTKD_2026 | Module: HR_MANAGEMENT | Phòng: Quản trị Kinh doanh</div>
+                </div>
+                <button id="btn-real-retry" class="btn-troll btn-retry">Gọi phòng IT 🔄</button>
+            </div>
+        </div>
+
+        <div id="found-phase" class="intro-phase">
+            <div class="found-container glass-card">
+                <div class="found-icon">👑</div>
+                <h2 class="found-title rainbow-text">ĐÃ XÁC MINH THÀNH CÔNG!</h2>
+                <p class="found-msg">📋 Kết quả đánh giá nhân sự:</p>
+                <div style="text-align: left; padding: 12px 20px; background: rgba(255,255,255,0.05); border-radius: 16px; margin-bottom: 20px; line-height: 2;">
+                    <p>📌 Họ tên: <strong style="color: #ff80b5;">Trịnh Bảo Châu</strong></p>
+                    <p>📌 Chức vụ: <strong style="color: #ffd700;">The most beautiful girl in Xteam</strong></p>
+                    <p>📌 KPI xinh đẹp: <strong style="color: #34d399;">999% 📈</strong></p>
+                    <p>📌 Đánh giá: <strong style="color: #ff4d94;">Vượt chỉ tiêu toàn bộ 💕</strong></p>
+                </div>
+                <div class="found-sparkles">✨🌟💖🌟✨</div>
+                <button id="btn-enter" class="btn-enter pulse-btn">Duyệt báo cáo sinh nhật 🎉</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ======================== -->
+    <!-- MAIN PAGE                -->
+    <!-- ======================== -->
+    <main id="main-page" class="hidden">
+        <!-- ======================== -->
+        <!-- 2. HERO SECTION          -->
+        <!-- ======================== -->
+        <section id="hero" class="section hero-section">
+            <div class="hero-bg-circles">
+                <div class="circle c1"></div>
+                <div class="circle c2"></div>
+                <div class="circle c3"></div>
+                <div class="circle c4"></div>
+                <div class="circle c5"></div>
+            </div>
+            <div class="hero-content" data-parallax="0.3">
+                <div class="hero-top-row">
+                    <img class="hero-logo" src="./img/RÉ/Logo-Rikkei.png" alt="">
+                    <div class="hero-badge">🎉 15/05/2026 🎉</div>
+                </div>
+                <h1 class="hero-title">
+                    Happy Birthday,<br>
+                    <span class="hero-name">Trịnh Bảo Châu</span>
+                    <span class="hero-emoji">🎂✨</span>
+                </h1>
+                <p class="hero-subtitle">Cô gái năng nổ & xinh gái nhất Xteam 💕</p>
+                <a href="#gallery" class="btn-scroll" id="btn-scroll-gallery">
+                    <span>Khám phá ngay</span>
+                    <div class="scroll-arrow">↓</div>
+                </a>
+            </div>
+        </section>
+
+        <!-- ======================== -->
+        <!-- 3. GALLERY SECTION       -->
+        <!-- ======================== -->
+        <section id="gallery" class="section gallery-section">
+            <div class="section-header" data-parallax="0.15">
+                <h2 class="section-title">📸 Bộ sưu tập ảnh</h2>
+                <p class="section-desc">Những khoảnh khắc đáng yêu nhất 💖</p>
+            </div>
+            <div class="masonry-grid" id="gallery-grid">
+                <!-- Images rendered dynamically by JS -->
+            </div>
+        </section>
+
+        <!-- Lightbox -->
+        <div id="lightbox" class="lightbox">
+            <button class="lightbox-close" id="lightbox-close">✕</button>
+            <button class="lightbox-prev" id="lightbox-prev">❮</button>
+            <button class="lightbox-next" id="lightbox-next">❯</button>
+            <img src="" alt="Lightbox Image" id="lightbox-img">
+            <div class="lightbox-counter" id="lightbox-counter"></div>
+        </div>
+
+        <!-- ======================== -->
+        <!-- 4. MESSAGE SECTION       -->
+        <!-- ======================== -->
+        <section id="message" class="section message-section">
+            <div class="message-container" data-parallax="0.2">
+                <div class="message-card glass-card">
+                    <div class="message-icon">💌</div>
+                    <h2 class="section-title">Lời chúc dành cho bạn</h2>
+                    <div class="typewriter-container">
+                        <p class="typewriter-text" id="typewriter-text"></p>
+                        <span class="typewriter-cursor" id="typewriter-cursor">|</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hearts-float-area" id="message-hearts"></div>
+        </section>
+
+        <!-- ======================== -->
+        <!-- 5. GIFT SECTION          -->
+        <!-- ======================== -->
+        <section id="gift" class="section gift-section">
+            <div class="gift-container" data-parallax="0.1">
+                <h2 class="section-title">🎁 Một món quà nhỏ</h2>
+                <p class="gift-hint">Nhấn vào hộp quà để mở!</p>
+                <div class="gift-box-wrapper">
+                    <div class="gift-box" id="gift-box">
+                        <div class="gift-lid" id="gift-lid">
+                            <div class="gift-bow"></div>
+                        </div>
+                        <div class="gift-body">
+                            <div class="gift-ribbon-v"></div>
+                            <div class="gift-ribbon-h"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="gift-message-reveal hidden" id="gift-message">
+                    <div class="gift-reveal-card glass-card">
+                        <div class="gift-reveal-emoji">🎊💖🎊</div>
+                        <h3>Chúc mừng sinh nhật!</h3>
+                        <p>Chúc Bảo Châu luôn xinh đẹp, thành công và hạnh phúc! Mãi là cô gái tuyệt vời nhất Xteam nha! 🌸💕</p>
+                        <div class="gift-reveal-sparkle">✨🎂🎉🎈💝✨</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======================== -->
+        <!-- 7. FOOTER                -->
+        <!-- ======================== -->
+        <footer id="footer" class="footer-section">
+            <div class="footer-content">
+                <p class="footer-text heartbeat">
+                    Web Dev by NguyenNhuHaiDang - 27NetTeam | Happy Birthday Trịnh Bảo Châu 15/05/2026 💕
+                </p>
+            </div>
+        </footer>
+    </main>
+
+    <!-- Quack Sound for Exit Button -->
+    <audio id="quack-sound" preload="auto">
+        <source src="sound/mac-quack.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Birthday Music (silent until triggered) -->
+    <audio id="birthday-music" preload="auto">
+        <source src="./sound/(1) KHÚC HÁT MỪNG SINH NHẬT - PHAN ĐINH TÙNG ( OFFICIAL VIDEO) - YouTube.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
