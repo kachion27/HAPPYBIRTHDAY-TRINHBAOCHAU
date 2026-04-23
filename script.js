@@ -74,10 +74,10 @@
                 progress = 99;
                 clearInterval(loadingInterval);
 
-                // After 2 seconds stuck at 99%, show stuck phase
+                // After 5 seconds stuck at 99%, show stuck phase
                 setTimeout(() => {
                     switchPhase('stuck');
-                }, 2000);
+                }, 5000);
             }
 
             const rounded = Math.min(Math.floor(progress), 99);
