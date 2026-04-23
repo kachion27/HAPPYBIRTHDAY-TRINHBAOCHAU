@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://hpbd-trinhbaochau.27netteam.top/sitemap.xml
