@@ -56,6 +56,28 @@
     let confettiActive = false;
 
     // ========================
+    // SOURCE VIEW SHORTCUT GUARD
+    // ========================
+    const initSourceGuard = () => {
+        document.addEventListener('contextmenu', (e) => {
+            e.preventDefault();
+        });
+
+        document.addEventListener('keydown', (e) => {
+            const key = e.key.toLowerCase();
+
+            if (
+                key === 'f12' ||
+                (e.ctrlKey && e.shiftKey && ['i', 'j', 'c'].includes(key)) ||
+                (e.ctrlKey && key === 'u')
+            ) {
+                e.preventDefault();
+                e.stopPropagation();
+            }
+        });
+    };
+
+    // ========================
     // 1. TROLL INTRO SCREEN
     // ========================
     const initIntro = () => {
@@ -535,6 +557,9 @@ Mãi là cô gái tuyệt vời nhất! 🌸✨
     const init = () => {
         // Prevent scroll during intro
         document.body.style.overflow = 'hidden';
+
+        // Basic guard against common inspect/source shortcuts
+        initSourceGuard();
 
         // Setup confetti canvas
         resizeConfettiCanvas();
